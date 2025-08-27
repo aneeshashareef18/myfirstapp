@@ -1,31 +1,34 @@
 import React from "react";
-import { Image, StatusBar, StyleSheet, Text, View } from "react-native";
-
+import { StyleSheet } from "react-native";
+import Screen from "./screen";
 const image = require("../assets/images/a.jpg");
 const ProfileScreen = () => {
   return (
-    <View style={styles.safe}>
-      <StatusBar
-        barStyle="light-content"
-        backgroundColor={styles.safe.backgroundColor}
-      />
+    // <View style={styles.safe}>
+    //   <StatusBar
+    //     barStyle="light-content"
+    //     backgroundColor={styles.safe.backgroundColor}
+    //   />
 
-      <View style={styles.container}>
-        <View style={styles.card} accessibilityRole="summary">
-          <Image
-            source={image}
-            style={[styles.avatar, { width: 300, height: 300 }]}
-            accessibilityLabel="Image of anesha"
-          />
-          <Text style={styles.name}>Hi 👋, I'm Aneesha shareef </Text>
-          <Text style={styles.bio} numberOfLines={6}>
-             A Freelance Full Stack Developer helping 
-            startups and growing teams build scalable, high-performance web and 
-            mobile applications — from idea to deployment.
-          </Text>
-        </View>
-      </View>
-    </View>
+    //   <View style={styles.container}>
+    //     <View style={styles.card} accessibilityRole="summary">
+    //       <Image
+    //         source={image}
+    //         style={[styles.avatar, { width: 300, height: 300 }]}
+    //         accessibilityLabel="Image of anesha"
+    //       />
+    //       <Text style={styles.name}>Hi 👋, I'm Aneesha shareef </Text>
+    //       <Text style={styles.bio} numberOfLines={6}>
+    //          A Freelance Full Stack Developer helping 
+    //         startups and growing teams build scalable, high-performance web and 
+    //         mobile applications — from idea to deployment.
+    //       </Text>
+    //     </View>
+    //   </View>
+    // </View>
+
+
+     <Screen/>
   );
 };
 
