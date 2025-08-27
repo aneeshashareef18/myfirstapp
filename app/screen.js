@@ -1,86 +1,88 @@
+
 import React from "react";
-import { View, Text, Image, TouchableOpacity, StyleSheet } from "react-native";
+import { Image, StyleSheet, Text, TouchableOpacity, View } from "react-native";
+const image = require("../assets/images/a.jpg");
 
 export default function ProfileScreen() {
   return (
     <View style={styles.container}>
-      {/* Header Row */}
       <View style={styles.header}>
-        {/* Profile Image */}
-        <Image
-          source={{ uri: "https://via.placeholder.com/100" }} // Dummy Image
-          style={styles.profileImage}
-        />
+        <Image source={image} style={styles.profileImage} />
+        <Text style={styles.name}>Aneesha shareef</Text>
+        <Text style={styles.tagline}>Self Warior</Text>
 
-        {/* Name + Tagline */}
-        <View style={styles.nameContainer}>
-          <Text style={styles.name}>aneesha</Text>
-          <Text style={styles.tagline}>Mobile Developer</Text>
-        </View>
-
-        {/* Edit Button */}
         <TouchableOpacity style={styles.editButton}>
-          <Text style={styles.editText}>Edit</Text>
+          <Text style={styles.editButtonText}>Edit Profile</Text>
         </TouchableOpacity>
       </View>
 
-      {/* User Info Card */}
       <View style={styles.card}>
-        <Text style={styles.info}>📧 Email: aneesha@example.com</Text>
-        <Text style={styles.info}>📱 Phone: 03256465878</Text>
-        <Text style={styles.info}>🏠 Address: layyah chowk azam</Text>
+        <Text style={styles.cardTitle}>User Info</Text>
+        <Text style={styles.cardText}>Email: annie395@gmail.com</Text>
+        <Text style={styles.cardText}>Phone: +92 340 3506379</Text>
+        <Text style={styles.cardText}>
+          Address: Ward No.3, Layyah Road Chowk Azam
+        </Text>
       </View>
     </View>
   );
 }
 
-// 👇 Students ko styles ko modify karna hai
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#f2f2f2", // Screen background
-    padding: 16,
+    backgroundColor: "#eef1f5",
+    padding: 20,
   },
   header: {
-    flexDirection: "row",
     alignItems: "center",
-    marginBottom: 20,
+    marginBottom: 24,
   },
   profileImage: {
-    width: 80,
-    height: 80,
-    borderRadius: 40, // ✅ Circle banane ke liye
-  },
-  nameContainer: {
-    flex: 1,
-    marginLeft: 12,
+    width: 100,
+    height: 100,
+    borderRadius: 50,
+    marginBottom: 12,
   },
   name: {
-    fontSize: 20,
+    fontSize: 24,
     fontWeight: "bold",
+    color: "#222",
   },
   tagline: {
-    fontSize: 14,
-    color: "gray",
+    fontSize: 16,
+    color: "#09090aff",
+    marginBottom: 12,
   },
   editButton: {
     backgroundColor: "#007bff",
-    padding: 8,
-    borderRadius: 6,
+    paddingHorizontal: 20,
+    paddingVertical: 8,
+    borderRadius: 20,
+    elevation: 3,
   },
-  editText: {
-    color: "white",
+  editButtonText: {
+    color: "#fff",
+    fontWeight: "600",
   },
   card: {
-    backgroundColor: "white",
-    padding: 16,
-    borderRadius: 12,
-    elevation: 4, // ✅ Android shadow
-    shadowColor: "#000", // ✅ iOS shadow
+    backgroundColor: "#8db1e4ff",
+    padding: 20,
+    borderRadius: 20,
+    elevation: 4,
+    shadowColor: "#000",
+    shadowOpacity: 0.1,
+    shadowOffset: { width: 0, height: 2 },
   },
-  info: {
+  cardTitle: {
+    fontSize: 18,
+    fontWeight: "bold",
+    marginBottom: 10,
+    color: "#000000ff",
+  },
+  cardText: {
     fontSize: 14,
-    marginVertical: 4,
+    color: "#343232ff",
+    marginBottom: 6,
   },
 });
-
